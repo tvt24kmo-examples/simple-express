@@ -4,6 +4,9 @@ const app=express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+const bookRouter=require('./routes/book');
+app.use('/book',bookRouter);
+
 app.get('/t1',function(request, response){
     console.log("Testi");
     response.send("Testi1");
